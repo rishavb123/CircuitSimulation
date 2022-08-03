@@ -1,5 +1,5 @@
-#ifndef CircuitComponent_h
-#define CircuitComponent_h
+#ifndef CIRCUIT_COMPONENT_H
+#define CIRCUIT_COMPONENT_H
 
 class CircuitComponent {
     public:
@@ -12,4 +12,4 @@ class CircuitComponent {
         bool **inp;
 };
 
-#endif // !CircuitComponent_h
+#endif // !CIRCUIT_COMPONENT_H
