@@ -12,5 +12,8 @@ $(TARGET): $(OFILES)
 $(TARGET).o: $(TARGET).cpp 
 	$(CC) $(CFLAGS) -c $(TARGET).cpp
 
+run:
+	./$(TARGET)
+
 clean:
 	rm $(TARGET) $(TARGET).o
