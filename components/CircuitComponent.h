@@ -5,7 +5,7 @@ class CircuitComponent {
     public:
         bool **getInput() const;
         void setInput(bool **inp);
-        virtual bool** getOutput() = 0;
+        virtual bool** getOutput() const = 0;
         bool **process(bool **inp);
 
     protected:
