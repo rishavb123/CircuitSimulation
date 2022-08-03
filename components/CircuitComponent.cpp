@@ -5,6 +5,6 @@ void CircuitComponent::setInput(bool **inp) {
 }
 
 bool** CircuitComponent::process(bool **inp) {
-    setInput(inp);
-    return getOutput();
+    this->setInput(inp);
+    return this->getOutput();
 }
