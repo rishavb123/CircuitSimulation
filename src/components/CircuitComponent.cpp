@@ -22,7 +22,7 @@ void CircuitComponent::setInput(component_io_t inp)
     }
     else
     {
-        throw std::exception("Invalid Input");
+        throw std::invalid_argument("Invalid Input");
     }
 }
 
