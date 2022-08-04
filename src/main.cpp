@@ -1,22 +1,19 @@
 #include <iostream>
 #include "./components/typedefs.h"
-#include "./components/wiring/Constant.h"
-#include "./components/wiring/Junction.h"
+#include "./components/gates/NOT.h"
 #include "./utils/macros.h"
 #include "./utils/output.h"
 
-int main(int argc, char const *argv[])
+int main(const int argc, char const *argv[])
 {
     UNUSED(argc);
     UNUSED(argv);
 
-    Constant *c1 = new Constant({1, 0});
-    Constant *c2 = new Constant({1, 0});
+    NOT *n = new NOT();
 
-    component_io_t inp({{"input_0", c1->getOutput()["output"]}, {"input_1", c2->getOutput()["output"]}});
+    component_io_t inp({{"input", {0}}});
 
-    Junction *j = new Junction(2);
-    component_io_t out = j->process(inp);
+    component_io_t out = n->process(inp);
 
     printComponentIO(inp);
     printComponentIO(out);
