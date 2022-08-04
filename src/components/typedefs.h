@@ -5,6 +5,6 @@
 #include <vector>
 #include <unordered_map>
 
-typedef std::unordered_map<std::string, std::vector<bool>> component_inp_t;
+typedef std::unordered_map<std::string, std::vector<bool>> component_io_t;
 
 #endif // !TYPE_DEFS_H

@@ -1,16 +1,16 @@
 #include "CircuitComponent.h"
 
-component_inp_t CircuitComponent::getInput() const
+component_io_t CircuitComponent::getInput() const
 {
     return this->inp;
 }
 
-bool CircuitComponent::validateInput(component_inp_t inp) const
+bool CircuitComponent::validateInput(component_io_t inp) const
 {
     return true;
 }
 
-void CircuitComponent::setInput(component_inp_t inp)
+void CircuitComponent::setInput(component_io_t inp)
 {
     if (this->validateInput(inp))
     {
@@ -22,7 +22,7 @@ void CircuitComponent::setInput(component_inp_t inp)
     }
 }
 
-component_inp_t CircuitComponent::process(component_inp_t inp)
+component_io_t CircuitComponent::process(component_io_t inp)
 {
     this->setInput(inp);
     return this->getOutput();

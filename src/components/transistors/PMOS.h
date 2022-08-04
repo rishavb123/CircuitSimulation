@@ -9,8 +9,8 @@ class PMOS : public CircuitComponent
 public:
     PMOS();
     ~PMOS();
-    bool validateInput(component_inp_t inp) const;
-    component_inp_t getOutput() const override;
+    bool validateInput(component_io_t inp) const;
+    component_io_t getOutput() const override;
 };
 
 #endif // !PMOS_H
