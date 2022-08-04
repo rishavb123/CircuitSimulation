@@ -19,16 +19,28 @@ bool Junction::validateInput(component_io_t inp) const
         {
             outDim = inp["input_" + std::to_string(i)].size();
         }
-        else if (outDim != inp["input_" + std::to_string(i)].size())
+        else if (outDim != (int)inp["input_" + std::to_string(i)].size())
         {
             return false;
         }
     }
     for (int j = 0; j < outDim; j++)
     {
+        bit_t val = 0;
+        bool first = true;
         for (size_t i = 1; i < this->numInputs; i++)
         {
-            if (inp.contains("input_" + std::to_string(i)) && inp["input_" + std::to_string(i)][j] != inp["input_" + std::to_string(i - 1)][j])
+
+            if (!inp.contains("input_" + std::to_string(i)))
+            {
+                continue;
+            }
+            if (first)
+            {
+                first = false;
+                val = inp["input_" + std::to_string(i)][j];
+            }
+            if (inp["input_" + std::to_string(i)][j] != val)
             {
                 return false;
             }
@@ -48,4 +60,5 @@ component_io_t Junction::getOutput()
             return out;
         }
     }
+    return out;
 }
