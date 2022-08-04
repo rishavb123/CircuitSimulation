@@ -11,16 +11,16 @@ bool PMOS::validateInput(component_io_t inp) const
            inp["gate"].size() == 1;
 }
 
-component_io_t PMOS::getOutput() const
+component_io_t PMOS::getOutput()
 {
     bool input = this->inp["input"][0];
     bool gate = this->inp["gate"][0];
+    component_io_t out;
     if (gate)
     {
-        component_io_t out;
         return out;
     }
-    vector<bool> output{input};
-    component_io_t out{{"output", output}};
+    wire_t output{input};
+    out["output"] = output;
     return out;
 }
