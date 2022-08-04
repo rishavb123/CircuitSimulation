@@ -9,11 +9,13 @@ bool PMOS::validateInput(bool **inp) const {
            length(inp[1]) == 1;
 }
 
-bool** PMOS::getOutput() const override {
+bool** PMOS::getOutput() const {
     bool input = this->inp[0][0];
     bool gate = this->inp[1][0];
     if (gate) {
         return {nullptr};
     }
-    return {{input}};
+    bool* outputWire = new bool[1] {input};
+    bool** output = new bool*[1] {outputWire};
+    return output;
 }
