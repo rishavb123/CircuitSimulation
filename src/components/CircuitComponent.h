@@ -1,11 +1,7 @@
 #ifndef CIRCUIT_COMPONENT_H
 #define CIRCUIT_COMPONENT_H
 
-#include <string>
-#include <vector>
-#include <map>
-
-typedef std::map<std::string, std::vector<bool>> component_inp_t;
+#include "typedefs.h"
 
 class CircuitComponent
 {
