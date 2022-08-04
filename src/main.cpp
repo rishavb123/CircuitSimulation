@@ -1,10 +1,13 @@
 #include <iostream>
 #include "./components/typedefs.h"
 #include "./components/transistors/NMOS.h"
+#include "./utils/macros.h"
 #include "./utils/output.h"
 
 int main(int argc, char const *argv[])
 {
+    UNUSED(argc);
+    UNUSED(argv);
 
     NMOS nmos;
     

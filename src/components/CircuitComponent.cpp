@@ -1,4 +1,5 @@
 #include "CircuitComponent.h"
+#include "../utils/macros.h"
 
 component_io_t CircuitComponent::getInput() const
 {
@@ -7,6 +8,7 @@ component_io_t CircuitComponent::getInput() const
 
 bool CircuitComponent::validateInput(component_io_t inp) const
 {
+    UNUSED(inp);
     return true;
 }
 
