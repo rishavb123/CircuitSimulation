@@ -8,7 +8,7 @@ class CircuitComponent
 public:
     component_io_t getInput() const;
     virtual bool validateInput(component_io_t inp) const;
-    void setInput(component_io_t inp);
+    virtual void setInput(component_io_t inp);
     virtual component_io_t getOutput() = 0;
     component_io_t process(component_io_t inp);
 
