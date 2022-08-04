@@ -3,19 +3,24 @@
 PMOS::PMOS() {}
 PMOS::~PMOS() {}
 
-bool PMOS::validateInput(bool **inp) const {
-    return length(inp) == 2 &&
-           length(inp[0]) == 1 &&
-           length(inp[1]) == 1;
+bool PMOS::validateInput(component_inp_t inp) const
+{
+    return inp.contains("input") &&
+           inp.contains("gate") &&
+           inp["input"].size() == 1 &&
+           inp["gate"].size() == 1;
 }
 
-bool** PMOS::getOutput() const {
-    bool input = this->inp[0][0];
-    bool gate = this->inp[1][0];
-    if (gate) {
-        return {nullptr};
+component_inp_t PMOS::getOutput() const
+{
+    bool input = this->inp["input"][0];
+    bool gate = this->inp["gate"][0];
+    if (gate)
+    {
+        component_inp_t out;
+        return out;
     }
-    bool* outputWire = new bool[1] {input};
-    bool** output = new bool*[1] {outputWire};
-    return output;
+    vector<bool> output{input};
+    component_inp_t out{{"output", output}};
+    return out;
 }
