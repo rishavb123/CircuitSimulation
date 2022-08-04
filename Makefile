@@ -50,6 +50,10 @@ clean:
 	@$(RM) -r $(BUILD_PATH)
 	@$(RM) -r $(BIN_PATH)
 
+.PHONY: run
+run:
+	./$(BIN_NAME)
+
 # checks the executable and symlinks to the output
 .PHONY: all
 all: $(BIN_PATH)/$(BIN_NAME)
