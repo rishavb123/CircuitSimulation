@@ -1,4 +1,3 @@
-#include "main.h"
 #include <iostream>
 #include "./utils/arrayutils.h"
 #include "./components/transistors/PMOS.h"
@@ -14,9 +13,9 @@ int main(int argc, char const *argv[])
 
     bool **out = pmos.process(inp);
     std::cout << "Input: " << std::endl;
-    printArray(inp);
+    print2DArray(inp);
     std::cout << "Output: " << std::endl;
-    printArray(out);
+    print2DArray(out);
 
     return 0;
 }

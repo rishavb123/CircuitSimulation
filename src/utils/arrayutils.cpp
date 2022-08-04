@@ -13,3 +13,11 @@ void printArray(T *arr) {
     }
     std::cout << std::endl;
 }
+
+template <typename T>
+void print2DArray(T **arr) {
+    int len = length(arr);
+    for (int i = 0; i < len; i++) {
+        printArray(arr[i]);
+    }
+}
