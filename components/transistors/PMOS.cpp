@@ -3,7 +3,7 @@
 PMOS::PMOS() {}
 PMOS::~PMOS() {}
 
-bool PMOS::validateInput(bool **inp) const override {
+bool PMOS::validateInput(bool **inp) const {
     return length(inp) == 2 &&
            length(inp[0]) == 1 &&
            length(inp[1]) == 1;

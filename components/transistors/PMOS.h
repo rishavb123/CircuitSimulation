@@ -8,7 +8,7 @@ class PMOS : public CircuitComponent {
     public:
         PMOS();
         ~PMOS();
-        bool validateInput(bool **inp) const override;
+        bool validateInput(bool **inp) const;
         bool** getOutput() const override;
 };
 
