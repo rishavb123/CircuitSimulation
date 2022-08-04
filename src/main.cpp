@@ -1,7 +1,6 @@
 #include <iostream>
 #include "./components/typedefs.h"
-#include "./components/transistors/NMOS.h"
-#include "./components/wiring/Constant.h"
+#include "./components/wiring/Splitter.h"
 #include "./utils/macros.h"
 #include "./utils/output.h"
 
@@ -10,16 +9,23 @@ int main(int argc, char const *argv[])
     UNUSED(argc);
     UNUSED(argv);
 
-    Constant constant({1});
+    Splitter splitter({
+        {{0, 0}, {0, 1}, {0, 2}},
+        {{0, 3}, {1, 0}, {1, 1}},
+        {{1, 2}, {1, 3}, {2, 0}},
+        {{2, 1}, {2, 2}, {2, 3}}
+    });
 
-    NMOS nmos;
+    component_io_t inp{
+        {"input_0", {1, 0, 0, 1}},
+        {"input_1", {0, 0, 1, 1}},
+        {"input_2", {1, 1, 0, 1}}
+    };
 
-    component_io_t inp {{"input", {0}}, {"gate", constant.getOutput()["output"]}};
-    component_io_t out = nmos.process(inp);
+    component_io_t out = splitter.process(inp);
 
     std::cout << "Input: " << std::endl;
     printComponentIO(inp, "\t");
-
     std::cout << "Output: " << std::endl;
     printComponentIO(out, "\t");
 

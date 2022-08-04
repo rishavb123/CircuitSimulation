@@ -3,10 +3,12 @@
 
 #include <string>
 #include <vector>
-#include <unordered_map>
+#include <map>
 
 typedef bool bit_t;
 typedef std::vector<bit_t> wire_t;
-typedef std::unordered_map<std::string, wire_t> component_io_t;
+typedef std::map<std::string, wire_t> component_io_t;
+
+typedef std::vector<std::vector<std::pair<size_t, size_t>>> splitter_connection_t;
 
 #endif // !TYPE_DEFS_H
