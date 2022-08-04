@@ -1,4 +1,6 @@
 #include "CircuitComponent.h"
+
+#include <stdexcept>
 #include "../utils/macros.h"
 
 component_io_t CircuitComponent::getInput() const
@@ -20,7 +22,7 @@ void CircuitComponent::setInput(component_io_t inp)
     }
     else
     {
-        throw "Invalid Input";
+        throw std::exception("Invalid Input");
     }
 }
 
