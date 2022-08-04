@@ -7,10 +7,11 @@
 class Junction : public CircuitComponent
 {
 public:
-    Junction(size_t numInputs=2);
+    Junction(size_t numInputs = 2);
     ~Junction();
-    bool validateInput(component_io_t inp) const;
+    bool validateInput(component_io_t inp) const override;
     component_io_t getOutput() override;
+
 private:
     size_t numInputs;
 };

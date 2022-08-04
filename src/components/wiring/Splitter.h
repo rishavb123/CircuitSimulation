@@ -10,7 +10,7 @@ public:
     Splitter();
     Splitter(splitter_connection_t connection);
     ~Splitter();
-    bool validateInput(component_io_t inp) const;
+    bool validateInput(component_io_t inp) const override;
     component_io_t getOutput() override;
 
 private:
