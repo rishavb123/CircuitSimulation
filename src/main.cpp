@@ -1,3 +1,4 @@
+#include "main.h"
 #include <iostream>
 #include "./utils/arrayutils.h"
 #include "./components/transistors/PMOS.h"
