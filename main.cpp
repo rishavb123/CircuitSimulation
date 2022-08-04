@@ -6,7 +6,11 @@ int main(int argc, char const *argv[])
 {
 
     PMOS pmos;
-    bool **inp = {{true}, {true}};
+    bool *input = new bool[1] {true};
+    bool *gate = new bool[1] {true};
+    
+    bool *inp[2] = {input, gate};
+
     bool **out = pmos.process(inp);
     std::cout << "Input: " << std::endl;
     printArray(inp);
