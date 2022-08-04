@@ -1,15 +1,15 @@
 #include <iostream>
 #include "./components/typedefs.h"
-#include "./components/transistors/PMOS.h"
+#include "./components/transistors/NMOS.h"
 #include "./utils/output.h"
 
 int main(int argc, char const *argv[])
 {
 
-    PMOS pmos;
+    NMOS nmos;
     
-    component_io_t inp {{"input", {1}}, {"gate", {0}}};
-    component_io_t out = pmos.process(inp);
+    component_io_t inp {{"input", {0}}, {"gate", {1}}};
+    component_io_t out = nmos.process(inp);
 
     std::cout << "Input: " << std::endl;
     printComponentIO(inp, "\t");
