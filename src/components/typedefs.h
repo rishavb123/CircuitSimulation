@@ -3,8 +3,8 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
-typedef std::map<std::string, std::vector<bool>> component_inp_t;
+typedef std::unordered_map<std::string, std::vector<bool>> component_inp_t;
 
 #endif // !TYPE_DEFS_H
