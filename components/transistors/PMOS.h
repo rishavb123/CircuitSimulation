@@ -2,7 +2,7 @@
 #define PMOS_H
 
 #include "../CircuitComponent.h"
-#include "../utils/arrayutils.h"
+#include "../../utils/arrayutils.h"
 
 class PMOS : public CircuitComponent {
     public:
