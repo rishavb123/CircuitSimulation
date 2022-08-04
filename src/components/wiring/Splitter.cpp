@@ -55,6 +55,7 @@ component_io_t Splitter::getOutput()
         {
             out[k].push_back(this->inp["input_" + std::to_string(connection_pair.first)][connection_pair.second]);
         }
+        idx++;
     }
     return out;
 }
