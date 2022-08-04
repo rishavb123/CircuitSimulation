@@ -4,8 +4,16 @@ bool** CircuitComponent::getInput() const {
     return this->inp;
 }
 
+bool CircuitComponent::validateInput(bool **inp) const {
+    return true;
+}
+
 void CircuitComponent::setInput(bool **inp) {
-    this->inp = inp;
+    if (this->validateInput(inp)) {
+        this->inp = inp;
+    } else {
+        throw "Invalid Input";
+    }
 }
 
 bool** CircuitComponent::process(bool **inp) {
