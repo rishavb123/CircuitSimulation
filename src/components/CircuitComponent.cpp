@@ -1,22 +1,29 @@
 #include "CircuitComponent.h"
 
-bool** CircuitComponent::getInput() const {
+component_inp_t CircuitComponent::getInput() const
+{
     return this->inp;
 }
 
-bool CircuitComponent::validateInput(bool **inp) const {
+bool CircuitComponent::validateInput(component_inp_t inp) const
+{
     return true;
 }
 
-void CircuitComponent::setInput(bool **inp) {
-    if (this->validateInput(inp)) {
+void CircuitComponent::setInput(component_inp_t inp)
+{
+    if (this->validateInput(inp))
+    {
         this->inp = inp;
-    } else {
+    }
+    else
+    {
         throw "Invalid Input";
     }
 }
 
-bool** CircuitComponent::process(bool **inp) {
+component_inp_t CircuitComponent::process(component_inp_t inp)
+{
     this->setInput(inp);
     return this->getOutput();
 }
