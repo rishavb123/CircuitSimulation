@@ -2,6 +2,6 @@
 #define ARRAY_UTILS_H
 
 template <typename T>
-int length(void *arr);
+int length(T *arr);
 
 #endif // !ARRAY_UTILS_H
