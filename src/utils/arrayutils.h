@@ -1,6 +1,8 @@
 #ifndef ARRAY_UTILS_H
 #define ARRAY_UTILS_H
 
+#include <iostream>
+
 template <typename T>
 int length(T *arr);
 
