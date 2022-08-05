@@ -13,6 +13,7 @@ public:
     ~OR();
     bool validateInput(component_io_t inp) const override;
     component_io_t getOutput() override;
+
 private:
     NOR *norGate;
     NOT *notGate;
