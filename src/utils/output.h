@@ -2,6 +2,7 @@
 #define OUTPUT_H
 
 #include <string>
+#include <iostream>
 
 #include "../components/typedefs.h"
 

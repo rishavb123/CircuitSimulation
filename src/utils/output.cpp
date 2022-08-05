@@ -1,7 +1,5 @@
 #include "output.h"
 
-#include <iostream>
-
 void printComponentIO(component_io_t inp, std::string prefix)
 {
     for (auto &[name, values] : inp)
