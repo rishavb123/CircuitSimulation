@@ -19,12 +19,12 @@ void NOT::setInput(component_io_t inp)
     CircuitComponent::setInput(inp);
     
     component_io_t pmos_inp;
-    pmos_inp["input"] = wire_t{true};
+    pmos_inp["input"] = wire_t{1};
     pmos_inp["gate"] = inp["input"];
     this->pmos->setInput(pmos_inp);
 
     component_io_t nmos_inp;
-    nmos_inp["input"] = wire_t{false};
+    nmos_inp["input"] = wire_t{0};
     nmos_inp["gate"] = inp["input"];
     this->nmos->setInput(nmos_inp);
 }
