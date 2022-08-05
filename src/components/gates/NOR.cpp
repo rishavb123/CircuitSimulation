@@ -23,22 +23,22 @@ component_io_t NOR::getOutput()
 {
     component_io_t pmosA_inp;
     pmosA_inp["input"] = wire_t{HIGH};
-    pmosA_inp["gate"] = inp["a"];
+    pmosA_inp["gate"] = this->inp["a"];
     component_io_t pmosA_out = this->pmosA->process(pmosA_inp);
 
     component_io_t pmosB_inp;
     pmosB_inp["input"] = pmosA_out["output"];
-    pmosB_inp["gate"] = inp["b"];
+    pmosB_inp["gate"] = this->inp["b"];
     component_io_t pmosB_out = this->pmosB->process(pmosB_inp);
 
     component_io_t nmosA_inp;
     nmosA_inp["input"] = wire_t{LOW};
-    nmosA_inp["gate"] = inp["a"];
+    nmosA_inp["gate"] = this->inp["a"];
     component_io_t nmosA_out = this->nmosA->process(nmosA_inp);
 
     component_io_t nmosB_inp;
     nmosB_inp["input"] = wire_t{LOW};
-    nmosB_inp["gate"] = inp["b"];
+    nmosB_inp["gate"] = this->inp["b"];
     component_io_t nmosB_out = this->nmosB->process(nmosB_inp);
 
     component_io_t junction_inp;
