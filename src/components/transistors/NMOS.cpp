@@ -13,14 +13,10 @@ bool NMOS::validateInput(component_io_t inp) const
 
 component_io_t NMOS::getOutput()
 {
-    bool input = this->inp["input"][0];
-    bool gate = this->inp["gate"][0];
+    int input = this->inp["input"][0];
+    int gate = this->inp["gate"][0];
     component_io_t out;
-    if (!gate)
-    {
-        return out;
-    }
-    wire_t output{input};
+    wire_t output{gate <= 0 ? input : UNDEFINED};
     out["output"] = output;
     return out;
 }

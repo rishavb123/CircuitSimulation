@@ -13,7 +13,7 @@ bool Junction::validateInput(component_io_t inp) const
     {
         if (!inp.contains("input_" + std::to_string(i)))
         {
-            continue;
+            return false;
         }
         else if (outDim == -1)
         {
@@ -30,17 +30,16 @@ bool Junction::validateInput(component_io_t inp) const
         bool first = true;
         for (size_t i = 0; i < this->numInputs; i++)
         {
-
-            if (!inp.contains("input_" + std::to_string(i)))
+            if (inp["input_" + std::to_string(i)][j] == UNDEFINED)
             {
                 continue;
             }
-            if (first)
+            else if (first)
             {
                 first = false;
                 val = inp["input_" + std::to_string(i)][j];
             }
-            if (inp["input_" + std::to_string(i)][j] != val)
+            else if (inp["input_" + std::to_string(i)][j] != val)
             {
                 return false;
             }
@@ -52,12 +51,16 @@ bool Junction::validateInput(component_io_t inp) const
 component_io_t Junction::getOutput()
 {
     component_io_t out;
+    out["output"] = {};
+    out["output"].resize(this->inp["input_0"].size(), UNDEFINED);
     for (size_t i = 0; i < this->numInputs; i++)
     {
-        if (inp.contains("input_" + std::to_string(i)))
+        for (size_t j = 0; j < this->inp["input_" + std::to_string(i)].size(); j++)
         {
-            out["output"] = this->inp["input_" + std::to_string(i)];
-            return out;
+            if (out["output"][j] == UNDEFINED && this->inp["input_" + std::to_string(i)][j] != UNDEFINED)
+            {
+                out["output"][j] = this->inp["input_" + std::to_string(i)][j];
+            }
         }
     }
     return out;
