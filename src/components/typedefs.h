@@ -5,7 +5,7 @@
 #include <vector>
 #include <map>
 
-typedef bool bit_t;
+typedef int bit_t;
 typedef std::vector<bit_t> wire_t;
 typedef std::map<std::string, wire_t> component_io_t;
 
