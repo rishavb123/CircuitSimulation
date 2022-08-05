@@ -52,10 +52,11 @@ component_io_t Junction::getOutput()
 {
     component_io_t out;
     out["output"] = {};
-    out["output"].resize(this->inp["input_0"].size(), UNKNOWN);
+    size_t outDim = this->inp["input_0"].size();
+    out["output"].resize(outDim, UNKNOWN);
     for (size_t i = 0; i < this->numInputs; i++)
     {
-        for (size_t j = 0; j < this->inp["input_" + std::to_string(i)].size(); j++)
+        for (size_t j = 0; j < outDim; j++)
         {
             if (out["output"][j] == UNKNOWN && this->inp["input_" + std::to_string(i)][j] != UNKNOWN)
             {
