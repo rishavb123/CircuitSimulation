@@ -16,7 +16,7 @@ component_io_t PMOS::getOutput()
     int input = this->inp["input"][0];
     int gate = this->inp["gate"][0];
     component_io_t out;
-    wire_t output{gate > 0? input: UNDEFINED};
+    wire_t output{gate > 0? input: UNKNOWN};
     out["output"] = output;
     return out;
 }
