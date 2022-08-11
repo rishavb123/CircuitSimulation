@@ -6,6 +6,7 @@
 
 #include "../components/typedefs.h"
 
+void printLine(const int width = 80);
 void printComponentIO(component_io_t inp, std::string prefix = "");
 
 #endif // !OUTPUT_H
