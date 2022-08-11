@@ -19,7 +19,7 @@ bool XNOR::validateInput(component_io_t inp) const
            inp["b"].size() == 1;
 }
 
-component_io_t XNOR::getOutput()
+component_io_t XNOR::calculateOutput()
 {
     component_io_t notA_inp;
     notA_inp["input"] = this->inp["a"];

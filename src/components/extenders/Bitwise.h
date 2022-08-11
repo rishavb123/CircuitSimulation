@@ -10,7 +10,7 @@ public:
     Bitwise(size_t numBits, CircuitComponent *component);
     ~Bitwise();
     bool validateInput(component_io_t inp) const override;
-    component_io_t getOutput() override;
+    component_io_t calculateOutput() override;
 
 private:
     size_t numBits;

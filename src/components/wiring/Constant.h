@@ -4,14 +4,15 @@
 #include "../CircuitComponent.h"
 #include "../typedefs.h"
 
-class Constant: public CircuitComponent
+class Constant : public CircuitComponent
 {
 public:
     Constant(wire_t value);
     ~Constant();
-    component_io_t getOutput() override;
+    component_io_t calculateOutput() override;
     void setValue(wire_t value);
     wire_t getValue();
+
 private:
     wire_t value;
 };

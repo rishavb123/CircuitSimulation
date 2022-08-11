@@ -20,7 +20,7 @@ bool Bitwise::validateInput(component_io_t inp) const
     return true;
 }
 
-component_io_t Bitwise::getOutput()
+component_io_t Bitwise::calculateOutput()
 {
     component_io_t out;
     for (size_t i = 0; i < this->numBits; i++)

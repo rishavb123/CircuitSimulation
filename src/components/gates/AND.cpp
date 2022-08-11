@@ -16,7 +16,7 @@ bool AND::validateInput(component_io_t inp) const
            inp["b"].size() == 1;
 }
 
-component_io_t AND::getOutput()
+component_io_t AND::calculateOutput()
 {
     component_io_t nor_out = this->nandGate->process(this->inp);
 

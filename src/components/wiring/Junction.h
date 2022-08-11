@@ -10,7 +10,7 @@ public:
     Junction(size_t numInputs = 2);
     ~Junction();
     bool validateInput(component_io_t inp) const override;
-    component_io_t getOutput() override;
+    component_io_t calculateOutput() override;
 
 private:
     size_t numInputs;

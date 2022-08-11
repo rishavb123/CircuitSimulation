@@ -19,7 +19,7 @@ bool NAND::validateInput(component_io_t inp) const
            inp["b"].size() == 1;
 }
 
-component_io_t NAND::getOutput() 
+component_io_t NAND::calculateOutput()
 {
     component_io_t pmosA_inp;
     pmosA_inp["input"] = wire_t{HIGH};

@@ -18,12 +18,23 @@ void CircuitComponent::setInput(component_io_t inp)
 {
     if (this->validateInput(inp))
     {
+        this->inputChanged = true;
         this->inp = inp;
     }
     else
     {
         throw std::invalid_argument("Invalid Input");
     }
+}
+
+component_io_t CircuitComponent::getOutput()
+{
+    if (this->inputChanged)
+    {
+        this->out = this->calculateOutput();
+        this->inputChanged = false;
+    }
+    return this->out;
 }
 
 component_io_t CircuitComponent::process(component_io_t inp)

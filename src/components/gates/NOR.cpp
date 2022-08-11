@@ -19,7 +19,7 @@ bool NOR::validateInput(component_io_t inp) const
            inp["b"].size() == 1;
 }
 
-component_io_t NOR::getOutput()
+component_io_t NOR::calculateOutput()
 {
     component_io_t pmosA_inp;
     pmosA_inp["input"] = wire_t{HIGH};

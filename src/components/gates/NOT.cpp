@@ -15,7 +15,7 @@ bool NOT::validateInput(component_io_t inp) const
            inp["input"].size() == 1;
 }
 
-component_io_t NOT::getOutput()
+component_io_t NOT::calculateOutput()
 {
     component_io_t pmos_inp;
     pmos_inp["input"] = wire_t{HIGH};

@@ -11,7 +11,7 @@ bool NMOS::validateInput(component_io_t inp) const
            inp["gate"].size() == 1;
 }
 
-component_io_t NMOS::getOutput()
+component_io_t NMOS::calculateOutput()
 {
     int input = this->inp["input"][0];
     int gate = this->inp["gate"][0];

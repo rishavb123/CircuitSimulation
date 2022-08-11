@@ -16,7 +16,7 @@ bool Buffer::validateInput(component_io_t inp) const
            inp["enable"].size() == 1;
 }
 
-component_io_t Buffer::getOutput()
+component_io_t Buffer::calculateOutput()
 {
     component_io_t out = {{"output", {}}};
     for (size_t i = 0; i < bitSize; i++)

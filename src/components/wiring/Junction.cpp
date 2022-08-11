@@ -48,7 +48,7 @@ bool Junction::validateInput(component_io_t inp) const
     return true;
 }
 
-component_io_t Junction::getOutput()
+component_io_t Junction::calculateOutput()
 {
     component_io_t out;
     out["output"] = {};

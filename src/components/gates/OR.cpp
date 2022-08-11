@@ -16,7 +16,7 @@ bool OR::validateInput(component_io_t inp) const
            inp["b"].size() == 1;
 }
 
-component_io_t OR::getOutput()
+component_io_t OR::calculateOutput()
 {
     component_io_t nor_out = this->norGate->process(this->inp);
 

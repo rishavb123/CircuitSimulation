@@ -43,7 +43,7 @@ bool Splitter::validateInput(component_io_t inp) const
     return true;
 }
 
-component_io_t Splitter::getOutput()
+component_io_t Splitter::calculateOutput()
 {
     component_io_t out;
     int idx = 0;
